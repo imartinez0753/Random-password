@@ -104,40 +104,27 @@ function generatePassword() {
 
 	if (userLower === true) {
 		collection = collection.concat(lower);
-		// console.log(collection);
-		//push to new array
 	}
-	//if only one is used
-	if (
-		//push to new array
-		userUpper === true
-	) {
+
+	if (userUpper === true) {
 		collection = collection.concat(upper);
-		//randomize and output
 	}
-	//if all but num is chosen
+
 	if (userNum === true) {
 		collection = collection.concat(num);
-		// console.log(collection);
-		// push to new array
 	}
-	//if all but lower is used
+
 	if (userSpecial === true) {
 		collection = collection.concat(special);
-		// push to new array combine randomiz and output
 	}
-	function loop(arr) {
-		for (var i = 0; i < characterLength; i++) {
-			var key = collection[Math.floor(Math.random() * characterLength)];
-			return key;
-		}
+
+	var key = "";
+	for (var i = 0; i < characterLength; i++) {
+		console.log(collection);
+		key += collection[Math.floor(Math.random() * characterLength)];
 	}
-	loop(collection);
-	// 	console.log(collection);
-	// 	console.log("----------------");
-	// 	loop(collection);
-	// 	return i;
-	// 	console.log(collection);
+
+	return key;
 }
 // Write password to the #password input
 function writePassword() {
@@ -152,17 +139,3 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 // -------------------------------------------------------------------------
-
-// loop(collection);
-
-// console.log(collection);
-// console.log("-------------------");
-
-// // loop(num);
-// // console.log("------------------");
-// // loop(lower);
-// // console.log("------------------");
-// // loop(upper);
-// // console.log("------------------");
-// // loop(special);
-// // console.log("------------------");
