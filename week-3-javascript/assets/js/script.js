@@ -104,7 +104,7 @@ function generatePassword() {
 
 	if (userLower === true) {
 		collection = collection.concat(lower);
-		console.log(collection);
+		// console.log(collection);
 		//push to new array
 	}
 	//if only one is used
@@ -118,15 +118,26 @@ function generatePassword() {
 	//if all but num is chosen
 	if (userNum === true) {
 		collection = collection.concat(num);
-		console.log(collection);
+		// console.log(collection);
 		// push to new array
 	}
 	//if all but lower is used
 	if (userSpecial === true) {
-		collection.concat(special);
+		collection = collection.concat(special);
 		// push to new array combine randomiz and output
 	}
-	console.log(collection);
+	function loop(arr) {
+		for (var i = 0; i < characterLength; i++) {
+			var key = collection[Math.floor(Math.random() * characterLength)];
+			return key;
+		}
+	}
+	loop(collection);
+	// 	console.log(collection);
+	// 	console.log("----------------");
+	// 	loop(collection);
+	// 	return i;
+	// 	console.log(collection);
 }
 // Write password to the #password input
 function writePassword() {
@@ -142,22 +153,16 @@ generateBtn.addEventListener("click", writePassword);
 
 // -------------------------------------------------------------------------
 
-function loop(arr) {
-	for (var i = 0; i < characterLength; i++) {
-		result = arr[Math.floor(Math.random() * characterLength)];
-		console.log(result);
-	}
-}
-loop(collection);
+// loop(collection);
 
-console.log(collection);
-console.log("-------------------");
+// console.log(collection);
+// console.log("-------------------");
 
-// loop(num);
-// console.log("------------------");
-// loop(lower);
-// console.log("------------------");
-// loop(upper);
-// console.log("------------------");
-// loop(special);
-// console.log("------------------");
+// // loop(num);
+// // console.log("------------------");
+// // loop(lower);
+// // console.log("------------------");
+// // loop(upper);
+// // console.log("------------------");
+// // loop(special);
+// // console.log("------------------");
